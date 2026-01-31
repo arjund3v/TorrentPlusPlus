@@ -1,0 +1,8 @@
+//
+// Created by Arjun Saini on 2026-01-30.
+//
+
+#ifndef TORRENTPLUSPLUS_SHA1_HPP
+#define TORRENTPLUSPLUS_SHA1_HPP
+
+#endif //TORRENTPLUSPLUS_SHA1_HPP
