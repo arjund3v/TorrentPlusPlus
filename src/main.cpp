@@ -1,3 +1,14 @@
-//
-// Created by Arjun Saini on 2026-01-30.
-//
+#include <iostream>
+#include <ostream>
+
+#include "bencode.hpp"
+
+using namespace bencode;
+
+int main(int argc, char *argv[]) {
+
+
+    std::cout << "Hello World!" << std::endl;
+
+
+ }
