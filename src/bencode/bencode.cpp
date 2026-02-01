@@ -40,7 +40,7 @@ namespace bencode {
             void expect(char expectedChar) {
                 char got = read();
                 if (got != expectedChar) {
-                    throw std::runtime_error("Bencode: Expected '" + std::string{expectedChar} +)
+                    throw std::runtime_error("Bencode: Expected '" + std::string{expectedChar});
                 };
             };
 
@@ -55,7 +55,7 @@ namespace bencode {
 
                 // Bencode lists are denoted by l<value><value><value>...e
                 if (nextChar == 'l') {
-                    retur bencode::Value{parseList()};
+                    return bencode::Value{parseList()};
                 }
 
                 // Bencode dictionaries are denoted by d<key><value>...e
@@ -80,14 +80,14 @@ namespace bencode {
                 // Move forward while current char is a digit
                 // We do this to read the full size of the string.
                 // This loop will stop once it hits the colon
-                while (index < input_.size() && isdigit(input_[index_])) {
+                while (index_ < input_.size() && isdigit(input_[index_])) {
                     index_++;
                 };
 
                 // After we finish scanning the digits, our next char MUST be :
                 // We check if we ran out of input to prevent out-of-bounds access
                 // we also check for the existence of the :
-                if (index >= input_.size() || input_[index_] != ':') {
+                if (index_ >= input_.size() || input_[index_] != ':') {
                     throw std::runtime_error("Bencode: Invalid string length prefix");
                 };
 
@@ -130,10 +130,6 @@ namespace bencode {
             Int parseInt();
             List parseList();
             Dict parseDict();
-
-            Value parseValue();
-
-
     };
 
 
